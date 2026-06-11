@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_caregiver"
+    app:startDestination="@id/navigation_caregiver_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_caregiver_dashboard"
+        android:name="com.medmonitor.ui.caregiver.CaregiverDashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_caregiver_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_patients"
+        android:name="com.medmonitor.ui.caregiver.CaregiverMedicinesFragmentV2"
+        android:label="Medicines"
+        tools:layout="@layout/fragment_caregiver_medicines_v2" />
+
+    <fragment
+        android:id="@+id/navigation_alerts"
+        android:name="com.medmonitor.ui.caregiver.AlertsFragment"
+        android:label="Alerts"
+        tools:layout="@layout/fragment_alerts_caregiver" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.medmonitor.ui.caregiver.CaregiverProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_caregiver_profile" />
+
+</navigation>

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardMedicine"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardElevation="0dp"
+    app:strokeWidth="0dp"
+    android:clickable="false"
+    android:focusable="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_medicine_card"
+        android:layout_margin="12dp"
+        android:orientation="vertical"
+        android:animateLayoutChanges="true">
+
+        <!-- HEADER SECTION (CLEAN MINIMAL DESIGN) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="14dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <!-- 1. LEFT: ICON -->
+            <ImageView
+                android:id="@+id/ivMedIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_icon_circle"
+                android:padding="10dp"
+                android:src="@drawable/ic_pill"
+                app:tint="#00E5FF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!-- 2. CENTER: MEDICINE NAME -->
+            <TextView
+                android:id="@+id/tvMedName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Medicine Name"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                app:layout_constraintStart_toEndOf="@id/ivMedIcon"
+                app:layout_constraintEnd_toStartOf="@id/statusBadge"
+                app:layout_constraintTop_toTopOf="@id/ivMedIcon"
+                app:layout_constraintBottom_toBottomOf="@id/ivMedIcon"
+                android:layout_marginHorizontal="8dp"/>
+
+            <!-- 3. RIGHT: STATUS + ARROW -->
+            <TextView
+                android:id="@+id/statusBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Completed"
+                android:textSize="11sp"
+                android:textColor="#00FFAA"
+                android:background="@drawable/bg_status_completed"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                app:layout_constraintEnd_toStartOf="@id/ivExpandArrow"
+                app:layout_constraintTop_toTopOf="@id/ivMedIcon"
+                app:layout_constraintBottom_toBottomOf="@id/ivMedIcon"
+                android:layout_marginEnd="8dp"/>
+
+            <ImageView
+                android:id="@+id/ivExpandArrow"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_arrow_down"
+                app:tint="#80FFFFFF"
+                android:alpha="0.7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivMedIcon"
+                app:layout_constraintBottom_toBottomOf="@id/ivMedIcon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- EXPANDED CONTENT (UNCHANGED LOGIC/DATA) -->
+        <LinearLayout
+            android:id="@+id/layoutExpanded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="16dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#22FFFFFF"
+                android:layout_marginVertical="8dp"/>
+
+            <!-- DOSAGE -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingVertical="6dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_dose"
+                    app:tint="#00E5FF"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Dosage"
+                    android:textColor="#99FFFFFF"
+                    android:textSize="12sp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tvDosageValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp"
+                    tools:text="2 Tablets"/>
+            </LinearLayout>
+
+            <!-- FOOD -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingVertical="6dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_food"
+                    app:tint="#00E5FF"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Food"
+                    android:textColor="#99FFFFFF"
+                    android:textSize="12sp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tvFoodValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp"
+                    tools:text="Before Food"/>
+            </LinearLayout>
+
+            <!-- DURATION -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingVertical="6dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_calendar"
+                    app:tint="#00E5FF"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Duration"
+                    android:textColor="#99FFFFFF"
+                    android:textSize="12sp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tvDurationValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp"
+                    tools:text="10 Oct - 20 Oct"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#22FFFFFF"
+                android:layout_marginVertical="8dp"/>
+
+            <!-- SCHEDULE SECTION -->
+            <LinearLayout
+                android:id="@+id/layoutScheduleContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMorning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#00E5FF"
+                    android:textSize="13sp"
+                    android:drawableStart="@drawable/ic_time"
+                    android:drawablePadding="6dp"
+                    app:drawableTint="#00E5FF"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_vertical"
+                    tools:text="Morning · 08:00 AM"/>
+
+                <TextView
+                    android:id="@+id/tvAfternoon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#00E5FF"
+                    android:textSize="13sp"
+                    android:drawableStart="@drawable/ic_time"
+                    android:drawablePadding="6dp"
+                    app:drawableTint="#00E5FF"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_vertical"
+                    tools:text="Noon · 12:00 PM"/>
+
+                <TextView
+                    android:id="@+id/tvNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#00E5FF"
+                    android:textSize="13sp"
+                    android:drawableStart="@drawable/ic_time"
+                    android:drawablePadding="6dp"
+                    app:drawableTint="#00E5FF"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_vertical"
+                    tools:text="Night · 08:00 PM"/>
+
+            </LinearLayout>
+
+            <!-- ACTION BUTTONS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:gravity="center">
+
+                <!-- DELETE -->
+                <ImageView
+                    android:id="@+id/btnDelete"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/bg_delete_glass"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_delete"
+                    app:tint="#FF5252"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <!-- EDIT -->
+                <ImageView
+                    android:id="@+id/btnEdit"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/bg_edit_glass"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_edit"
+                    app:tint="#00E5FF"
+                    android:clickable="true"
+                    android:focusable="true"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,9 @@
+Appium-Python-Client==3.1.0
+selenium==4.15.2
+openpyxl==3.1.2
+Pillow==10.1.0
+pytest==7.4.3
+pytest-html==4.1.1
+python-dotenv==1.0.0
+colorama==0.4.6
+xlsxwriter==3.1.9

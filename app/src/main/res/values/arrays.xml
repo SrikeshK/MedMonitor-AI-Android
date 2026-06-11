@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="snooze_options">
+        <item>5 minutes</item>
+        <item>10 minutes</item>
+        <item>15 minutes</item>
+    </string-array>
+    <string-array name="unit_types">
+        <item>Tablet</item>
+        <item>ml</item>
+        <item>mg</item>
+        <item>Capsule</item>
+    </string-array>
+    <string-array name="notification_types">
+        <item>SMS</item>
+        <item>Email</item>
+    </string-array>
+    <string-array name="languages">
+        <item>English</item>
+        <item>Spanish</item>
+    </string-array>
+    <string-array name="notification_sounds">
+        <item>Default</item>
+        <item>Alarm</item>
+        <item>Notification Tone 1</item>
+        <item>Notification Tone 2</item>
+        <item>Soft Bell</item>
+    </string-array>
+</resources>

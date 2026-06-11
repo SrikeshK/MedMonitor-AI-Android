@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">MedMonitor AI</string>
+    <string name="add_medicine">Add Medicine</string>
+    <string name="medicine_list">Medicine List</string>
+    <string name="analytics">Analytics</string>
+    <string name="family">Caregivers</string>
+    <string name="confirm_intake">Confirm Intake</string>
+    <string name="save_medicine">Save Medicine</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="alerts">Alerts</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="settings">Settings</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="current_medications">Current Medications</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="choose_gallery">Choose from Gallery</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="profile_photo">Profile Photo</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="medication_icon">Medication Icon</string>
+    <string name="caregivers_icon">Caregivers Icon</string>
+    <string name="settings_icon">Settings Icon</string>
+    <string name="arrow_icon">Arrow Icon</string>
+
+    <!-- Dose Confirmation Strings -->
+    <string name="before_food">Before Food</string>
+    <string name="after_food">After Food</string>
+    <string name="anytime">Anytime</string>
+    <string name="take_before_food">Take this medicine 30 mins before eating</string>
+    <string name="take_after_food">Take this medicine after food</string>
+    <string name="take_anytime">This medicine can be taken anytime</string>
+
+    <!-- Inventory Strings -->
+    <string name="inventory_title">My Medicine Counts</string>
+    <string name="tablets_label">Tablets</string>
+    <string name="liquid_label">Liquid Medicine</string>
+    <string name="inventory_button">Inventory</string>
+    <string name="tablets_remaining">%d tablets remaining</string>
+    <string name="liquid_remaining">%d ml remaining</string>
+
+    <!-- Settings Strings -->
+    <string name="settings_notifications_title">Reminders &amp; Notifications</string>
+    <string name="settings_enable_notifications">Enable Notifications</string>
+    <string name="settings_snooze_duration">Snooze Duration</string>
+    <string name="settings_vibration">Vibration</string>
+    <string name="settings_missed_dose_delay">Missed Dose Delay (min)</string>
+
+    <!-- Stock Alerts Settings -->
+    <string name="settings_stock_alerts_title">Stock Alerts</string>
+    <string name="settings_enable_stock_alerts">Enable Stock Alerts</string>
+    <string name="settings_notify_device">Notify me on device</string>
+    <string name="settings_notify_caregiver">Notify caregiver</string>
+    <string name="settings_stock_alerts_description">Get notified when your medicine stock is running low.</string>
+
+    <string name="settings_low_stock_threshold">Low Stock Threshold</string>
+    <string name="settings_auto_refill">Auto Refill Reminder</string>
+
+    <string name="settings_care_circle_title">Care Circle Settings</string>
+    <string name="settings_notify_immediately">Notify Immediately</string>
+    <string name="settings_notify_after_delay">Notify After Delay</string>
+    <string name="settings_enable_retry">Enable Retry</string>
+    <string name="settings_notification_type">Notification Type</string>
+
+    <string name="settings_privacy_title">Privacy &amp; Security</string>
+    <string name="settings_cloud_backup">Cloud Backup</string>
+
+    <string name="settings_data_title">Data &amp; Analytics</string>
+    <string name="settings_export_pdf">Export PDF Report</string>
+    <string name="settings_weekly_report">Weekly Report</string>
+    <string name="settings_clear_history">Clear History</string>
+
+    <string name="settings_general_title">General</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_help_support">Help &amp; Support</string>
+    <string name="settings_about">About App</string>
+</resources>

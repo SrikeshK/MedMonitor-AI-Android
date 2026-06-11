@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PART 1 — ROOT CAUSE FIX: Ensure root layout is ConstraintLayout -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardContent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    android:background="@drawable/glass_card_premium"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="16dp">
+
+    <!-- PART 3 — ACTION BUTTON CONTAINER -->
+    <LinearLayout
+        android:id="@+id/actionContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="0dp">
+
+        <!-- Add Button -->
+        <ImageView
+            android:id="@+id/btnRefill"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/glass_circle_bg"
+            android:padding="10dp"
+            android:src="@drawable/ic_add"
+            app:tint="@color/secondary" />
+
+        <!-- Edit Button -->
+        <ImageView
+            android:id="@+id/editThreshold"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/glass_circle_bg"
+            android:padding="10dp"
+            android:src="@drawable/ic_edit"
+            app:tint="@color/secondary" />
+
+    </LinearLayout>
+
+    <!-- PART 2 — CONTENT SECTION (LEFT) -->
+    <!-- PART 4 — PREVENT OVERLAP (CRITICAL): Constrain END to actionContainer start + margin 12dp -->
+
+    <TextView
+        android:id="@+id/medicineName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toStartOf="@id/actionContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Paracetamol" />
+
+    <TextView
+        android:id="@+id/typeLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:alpha="0.6"
+        android:textAllCaps="true"
+        android:textColor="@color/secondary"
+        android:textSize="10sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toStartOf="@id/actionContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/medicineName"
+        tools:text="TABLET" />
+
+    <!-- PART 6 — TEXT SPACING: 12-16dp between groups -->
+    <TextView
+        android:id="@+id/daysLeft"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/actionContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/typeLabel"
+        tools:text="~5 days left" />
+
+    <TextView
+        android:id="@+id/thresholdText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:alpha="0.7"
+        android:textColor="#FFBF00"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@id/actionContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/daysLeft"
+        tools:text="⚠ Alert at 4" />
+
+    <!-- PART 5 — PROGRESS BAR FIX: Width 0dp, constraints set -->
+    <!-- PART 7 — TABLET ROW FIX: Use constrained width -->
+    <FrameLayout
+        android:id="@+id/visualContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toStartOf="@id/actionContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/thresholdText">
+
+        <HorizontalScrollView
+            android:id="@+id/pillScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/pillContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <ProgressBar
+            android:id="@+id/liquidBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:progressDrawable="@drawable/liquid_progress"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/remainingCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/actionContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/visualContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="10 tablets remaining" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

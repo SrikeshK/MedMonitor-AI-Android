@@ -1,0 +1,9 @@
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#22FFFFFF">
+    <item>
+        <layer-list>
+            <item android:drawable="@drawable/bg_settings_glass"/>
+            <item android:drawable="@drawable/bg_settings_stroke"/>
+        </layer-list>
+    </item>
+</ripple>

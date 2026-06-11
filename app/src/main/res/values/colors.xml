@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Professional Dark Theme -->
+    <color name="background">#0B0F1A</color>
+    <color name="splash_bg">#0A1A2F</color> <!-- Updated to user preference -->
+    <color name="card_background">#121826</color>
+    <color name="primary">#3AA6FF</color>
+    <color name="primary_variant">#1E40AF</color>
+    <color name="secondary">#00E0C6</color>
+    <color name="accent">#00E0C6</color>
+    <color name="success">#22C55E</color>
+    <color name="warning">#FACC15</color>
+    <color name="error">#EF4444</color>
+
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#9CA3AF</color>
+
+    <!-- Splash Specific Colors -->
+    <color name="splash_navy">#0A0F1C</color>
+    <color name="splash_teal">#004D40</color>
+    <color name="cyan_glow">#00E5FF</color>
+
+    <!-- Premium Glass UI Colors -->
+    <color name="glass_cyan">#00E5FF</color>
+    <color name="glass_input_bg">#121A2F</color>
+    <color name="glass_input_stroke">#2A3A5A</color>
+    <color name="glass_input_focus">#00E5FF</color>
+    <color name="glass_card_bg">#1AFFFFFF</color>
+    <color name="glass_card_stroke">#33FFFFFF</color>
+
+    <!-- Gradients & Glassmorphism -->
+    <color name="header_gradient_start">#00E5FF</color>
+    <color name="header_gradient_end">#0A1A2F</color>
+    <color name="grad_start">#3AA6FF</color>
+    <color name="grad_end">#00E0C6</color>
+
+    <color name="primary_light">#803AA6FF</color>
+
+    <color name="glass_overlay">#1AFFFFFF</color>
+    <color name="glass_stroke">#33FFFFFF</color>
+    <color name="glass_border">#33FFFFFF</color>
+    <color name="glass_white">#1AFFFFFF</color>
+
+    <!-- Nav item colors -->
+    <color name="nav_item_selected">#3AA6FF</color>
+    <color name="nav_item_unselected">#9CA3AF</color>
+</resources>

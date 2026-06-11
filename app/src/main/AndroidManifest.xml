@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.medmonitor"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <!-- Android 13+ Permission -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <!-- For older versions -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+
+    <application
+        android:name=".MedMonitorApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MedMonitor"
+        tools:targetApi="31">
+        
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MedMonitor.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.OnboardingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.ModeSelectionActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.CaregiverMainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.caregiver.DeepLinkHandlerActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MedMonitor.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="medmonitor"
+                    android:host="confirm" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.caregiver.AddCaregiverPatientActivityV2"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.caregiver.AddCaregiverMedicineActivityV2"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.caregiver.SelectPatientForMedicineActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.auth.RegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.auth.ForgotPasswordActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.medicine.AddMedicineActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.medicine.MedicineListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.medicine.DoseConfirmationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.medicine.SuccessActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.medicine.OutOfStockActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.family.FamilyActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.notifications.NotificationsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.analytics.AnalyticsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.analytics.WeeklyReportActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.profile.EditProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.NotificationsSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.StockAlertsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.CareCircleSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.DataAnalyticsSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.GeneralSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.InventoryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <activity
+            android:name=".ui.AboutActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MedMonitor.NoActionBar" />
+
+        <receiver
+            android:name=".receiver.MedicineReminderReceiver"
+            android:enabled="true"
+            android:exported="false"
+            android:directBootAware="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.medmonitor.ACTION_CONFIRM_NOW" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".receiver.CaregiverReminderReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

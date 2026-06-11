@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="8dp"
+    android:gravity="center_vertical">
+
+    <View
+        android:id="@+id/statusDot"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:background="@drawable/bg_status_dot"
+        android:layout_marginEnd="12dp" />
+
+    <TextView
+        android:id="@+id/tvSlotName"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Morning"
+        android:textColor="#9AA4B2"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvSlotTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="07:00 AM"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSlotStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/glass_badge_bg"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        android:text="Missed"
+        android:textColor="#FF6B6B"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+</LinearLayout>
