@@ -1,0 +1,27 @@
+# Android Studio
+.idea/
+.gradle/
+*.iml
+local.properties
+
+# Build
+build/
+app/build/
+
+# APK / AAB
+*.apk
+*.aab
+
+# Firebase
+app/google-services.json
+
+# Signing Keys
+*.jks
+*.keystore
+
+# Appium
+appium_tests/__pycache__/
+appium_tests/internal_debug.log
+
+# Python cache
+*.pyc
