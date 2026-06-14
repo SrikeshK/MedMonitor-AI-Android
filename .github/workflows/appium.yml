@@ -36,7 +36,13 @@ jobs:
       - name: Install Appium and Drivers
         run: |
           npm install -g appium
-          appium driver install uiautomator2
+          $drivers = appium driver list --installed
+          if ($drivers -match "uiautomator2") {
+            Write-Output "UIAutomator2 driver is already installed. Skipping installation."
+          } else {
+            Write-Output "Installing UIAutomator2 driver..."
+            appium driver install uiautomator2
+          }
 
       - name: Install Python Dependencies
         run: |
