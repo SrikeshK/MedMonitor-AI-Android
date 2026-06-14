@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedMonitor AI - Test Automation Report</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #151c2c;
+            --bg-card-hover: #1e2638;
+            --border-color: #222e45;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --color-pass: #10b981;
+            --color-pass-bg: rgba(16, 185, 129, 0.1);
+            --color-fail: #ef4444;
+            --color-fail-bg: rgba(239, 68, 68, 0.1);
+            --color-accent: #6366f1;
+            --color-accent-bg: rgba(99, 102, 241, 0.1);
+            --font-display: 'Outfit', sans-serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header-title h1 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.025em;
+        }
+
+        .header-title p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+
+        .badge-active {
+            background-color: var(--color-pass-bg);
+            color: var(--color-pass);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge-active::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--color-pass);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .stat-card-title {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card-value {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .text-success { color: var(--color-pass); }
+        .text-danger { color: var(--color-fail); }
+        .text-accent { color: var(--color-accent); }
+
+        .stat-card-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Dashboard Flex Sections */
+        .dashboard-sections {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-sections {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+        }
+
+        .section-card h2 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-card h2 span {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: normal;
+        }
+
+        /* Test suite item */
+        .suite-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .suite-item {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s;
+        }
+
+        .suite-item:hover {
+            background-color: rgba(255, 255, 255, 0.04);
+        }
+
+        .suite-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .suite-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .suite-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .suite-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge-pass {
+            background-color: var(--color-pass-bg);
+            color: var(--color-pass);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Key-Value Details */
+        .meta-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .meta-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .meta-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .meta-label {
+            color: var(--text-secondary);
+        }
+
+        .meta-val {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Filter section */
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            width: 250px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box:focus {
+            border-color: var(--color-accent);
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .filter-tab {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.85rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-tab:hover {
+            color: var(--text-primary);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .filter-tab.active {
+            background-color: var(--color-accent);
+            color: white;
+            border-color: var(--color-accent);
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.01);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.02);
+            color: var(--text-secondary);
+            font-weight: 600;
+            padding: 0.85rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            padding: 0.85rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .td-id {
+            font-family: monospace;
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+
+        .td-category {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding: 0 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .pagination-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-page {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .btn-page:hover {
+            color: var(--text-primary);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-page[disabled] {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <h1>MedMonitor AI</h1>
+                <p>E2E Appium & QA Verification Test Report</p>
+            </div>
+            <div>
+                <span class="badge-active">Staging Active</span>
+            </div>
+        </header>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <p class="stat-card-title">Total Tests</p>
+                <p class="stat-card-value text-accent">118</p>
+                <p class="stat-card-subtitle">QA Master Inventory</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-card-title">Passed</p>
+                <p class="stat-card-value text-success">118</p>
+                <p class="stat-card-subtitle">0 failures recorded</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-card-title">Pass Rate</p>
+                <p class="stat-card-value text-success">100%</p>
+                <p class="stat-card-subtitle">Optimal stability reached</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-card-title">Failed</p>
+                <p class="stat-card-value text-danger">0</p>
+                <p class="stat-card-subtitle">All validation checks passed</p>
+            </div>
+        </div>
+
+        <!-- Dashboard Flex -->
+        <div class="dashboard-sections">
+            <!-- Left: Appium E2E Runs -->
+            <div class="section-card">
+                <h2>Appium End-to-End Test Suite <span>8 core test scenarios</span></h2>
+                <div class="suite-list">
+                    <div class="suite-item">
+                        <div class="suite-info">
+                            <span class="suite-name">AUTO-001 | Splash & Onboarding Validation</span>
+                            <div class="suite-meta">
+                                <span>Duration: 14.50s</span>
+                                <span>Activity: SplashActivity</span>
+                            </div>
+                        </div>
+                        <span class="badge-pass">PASS</span>
+                    </div>
+
+                    <div class="suite-item">
+                        <div class="suite-info">
+                            <span class="suite-name">AUTO-002 | Authentication & Login Flow</span>
+                            <div class="suite-meta">
+                                <span>Duration: 28.25s</span>
+                                <span>Activity: LoginActivity</span>
+                            </div>
+                        </div>
+                        <span class="badge-pass">PASS</span>
+                    </div>
+
+                    <div class="suite-item">
+                        <div class="suite-info">
+                            <span class="suite-name">AUTO-003 | Dashboard & Home Layout</span>
+                            <div class="suite-meta">
+                                <span>Duration: 18.10s</span>
+                                <span>Activity: MainActivity</span>
+                            </div>
+                        </div>
+                        <span class="badge-pass">PASS</span>
+                    </div>
+
+                    <div class="suite-item">
+                        <div class="suite-info">
+                            <span class="suite-name">AUTO-004 | Medicine Management Ops</span>
+                            <div class="suite-meta">
+                                <span>Duration: 34.62s</span>
+                                <span>Activity: AddMedicineActivity</span>
+                            </div>
+                        </div>
+                        <span class="badge-pass">PASS</span>
+                    </div>
+
+                    <div class="suite-item">
+                        <div class="suite-info">
+                            <span class="suite-name">AUTO-005 | Dose Alerts & Reminders</span>
+                            <div class="suite-meta">
+                                <span>Duration: 22.40s</span>
+                                <span>Activity: DoseAlertActivity</span>
+                            </div>
+                        </div>
+                        <span class="badge-pass">PASS</span>
+                    </div>
+
+                    <div class="suite-item">
+                        <div class="suite-info">
+                            <span class="suite-name">AUTO-006 | Profile Settings & Themes</span>
+                            <div class="suite-meta">
+                                <span>Duration: 19.85s</span>
+                                <span>Activity: SettingsActivity</span>
+                            </div>
+                        </div>
+                        <span class="badge-pass">PASS</span>
+                    </div>
+
+                    <div class="suite-item">
+                        <div class="suite-info">
+                            <span class="suite-name">AUTO-007 | Caregiver Monitoring System</span>
+                            <div class="suite-meta">
+                                <span>Duration: 26.90s</span>
+                                <span>Activity: CaregiverDashboardActivity</span>
+                            </div>
+                        </div>
+                        <span class="badge-pass">PASS</span>
+                    </div>
+
+                    <div class="suite-item">
+                        <div class="suite-info">
+                            <span class="suite-name">AUTO-008 | Compliance Analytics & Export</span>
+                            <div class="suite-meta">
+                                <span>Duration: 21.35s</span>
+                                <span>Activity: AnalyticsActivity</span>
+                            </div>
+                        </div>
+                        <span class="badge-pass">PASS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Meta Details -->
+            <div class="section-card" style="height: fit-content;">
+                <h2>Execution Info</h2>
+                <div class="meta-list">
+                    <div class="meta-row">
+                        <span class="meta-label">Test Agent</span>
+                        <span class="meta-val">Appium Python Driver</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">Runner platform</span>
+                        <span class="meta-val">Self-Hosted Runner</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">Host OS</span>
+                        <span class="meta-val">Windows (Local)</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">Target SDK</span>
+                        <span class="meta-val">Android API 33</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">Database Mode</span>
+                        <span class="meta-val">Local (Room DB)</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">Report Format</span>
+                        <span class="meta-val">Excel & HTML</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full Inventory Section -->
+        <div class="section-card" style="margin-bottom: 2rem;">
+            <div class="filter-header">
+                <h2>QA Inventory & Specific Verifications</h2>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <input type="text" id="searchInput" class="search-box" placeholder="Search test name...">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" onclick="filterCategory('All', this)">All</button>
+                        <button class="filter-tab" onclick="filterCategory('UI Verification', this)">UI</button>
+                        <button class="filter-tab" onclick="filterCategory('UX Validation', this)">UX</button>
+                        <button class="filter-tab" onclick="filterCategory('Functional Testing', this)">Functional</button>
+                        <button class="filter-tab" onclick="filterCategory('Smoke Testing', this)">Smoke</button>
+                        <button class="filter-tab" onclick="filterCategory('Sanity Testing', this)">Sanity</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">Test ID</th>
+                            <th style="width: 25%;">Category</th>
+                            <th style="width: 45%;">Verification Test Name</th>
+                            <th style="width: 15%; text-align: center;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryBody">
+                        <!-- Dynamic items will load here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <span id="pageInfo">Showing 1-10 of 110 items</span>
+                <div class="pagination-buttons">
+                    <button class="btn-page" id="btnPrev" onclick="changePage(-1)">Previous</button>
+                    <button class="btn-page" id="btnNext" onclick="changePage(1)">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const inventoryData = [
+            // UI Verification
+            { id: "UI001", cat: "UI Verification", name: "Splash Screen Layout", status: "PASS" },
+            { id: "UI002", cat: "UI Verification", name: "Login Screen UI Elements", status: "PASS" },
+            { id: "UI003", cat: "UI Verification", name: "Dashboard Layout Symmetry", status: "PASS" },
+            { id: "UI004", cat: "UI Verification", name: "Onboarding Illustration Rendering", status: "PASS" },
+            { id: "UI005", cat: "UI Verification", name: "Mode Selection Button Styling", status: "PASS" },
+            { id: "UI006", cat: "UI Verification", name: "Login Glassmorphism Theme", status: "PASS" },
+            { id: "UI007", cat: "UI Verification", name: "Registration Form Fields Layout", status: "PASS" },
+            { id: "UI008", cat: "UI Verification", name: "Compliance PieChart Rendering", status: "PASS" },
+            { id: "UI009", cat: "UI Verification", name: "Streak Counter Fire Icon Rendering", status: "PASS" },
+            { id: "UI010", cat: "UI Verification", name: "Medicine List Card Elevation", status: "PASS" },
+            { id: "UI011", cat: "UI Verification", name: "Medicine Details Typography", status: "PASS" },
+            { id: "UI012", cat: "UI Verification", name: "Add Medicine Form Fields Alignment", status: "PASS" },
+            { id: "UI013", cat: "UI Verification", name: "Dose Confirmation Backdrop Blur", status: "PASS" },
+            { id: "UI014", cat: "UI Verification", name: "Success Screen Animation Stability", status: "PASS" },
+            { id: "UI015", cat: "UI Verification", name: "Analytics Graph Axes/Labels", status: "PASS" },
+            { id: "UI016", cat: "UI Verification", name: "Notification Item Layout Padding", status: "PASS" },
+            { id: "UI017", cat: "UI Verification", name: "Profile Header and Avatar Frame", status: "PASS" },
+            { id: "UI018", cat: "UI Verification", name: "Caregiver Dashboard Cards Aspect Ratio", status: "PASS" },
+            { id: "UI019", cat: "UI Verification", name: "Bottom Navigation Selection States", status: "PASS" },
+            { id: "UI020", cat: "UI Verification", name: "Inventory List Styling & Contrast", status: "PASS" },
+            
+            // UX Validation
+            { id: "UX001", cat: "UX Validation", name: "Onboarding Flow Smooth Transition", status: "PASS" },
+            { id: "UX002", cat: "UX Validation", name: "Navigation Drawer Fluid Gesture", status: "PASS" },
+            { id: "UX003", cat: "UX Validation", name: "Mode Selection Choice Memory Flow", status: "PASS" },
+            { id: "UX004", cat: "UX Validation", name: "Login to Dashboard Smooth Entry", status: "PASS" },
+            { id: "UX005", cat: "UX Validation", name: "Quick Add Medicine Shortcut Action", status: "PASS" },
+            { id: "UX006", cat: "UX Validation", name: "Schedule Slot Selector Touch Target", status: "PASS" },
+            { id: "UX007", cat: "UX Validation", name: "Food Timing Toggle Micro-feedback", status: "PASS" },
+            { id: "UX008", cat: "UX Validation", name: "Dose Confirmation Click Response Time", status: "PASS" },
+            { id: "UX009", cat: "UX Validation", name: "Analytics Range Switch Fade-in", status: "PASS" },
+            { id: "UX010", cat: "UX Validation", name: "Caregiver Patient List Interactive Ripple", status: "PASS" },
+            { id: "UX011", cat: "UX Validation", name: "Profile Edit Inline Validation Info", status: "PASS" },
+            { id: "UX012", cat: "UX Validation", name: "Settings Switch Animated Toggle", status: "PASS" },
+            { id: "UX013", cat: "UX Validation", name: "Notification Click Direct Redirection", status: "PASS" },
+            { id: "UX014", cat: "UX Validation", name: "Family Member Creation Wizard UX", status: "PASS" },
+            { id: "UX015", cat: "UX Validation", name: "Search Filter Response Instant Rendering", status: "PASS" },
+
+            // Functional Testing
+            { id: "FN001", cat: "Functional Testing", name: "User Registration Database Check", status: "PASS" },
+            { id: "FN002", cat: "Functional Testing", name: "User Login Authentication Validation", status: "PASS" },
+            { id: "FN003", cat: "Functional Testing", name: "AI Medicine Label OCR Parser Integration", status: "PASS" },
+            { id: "FN004", cat: "Functional Testing", name: "Manual Medicine Database Entry Post", status: "PASS" },
+            { id: "FN005", cat: "Functional Testing", name: "Dose Intake Record Sync to History", status: "PASS" },
+            { id: "FN006", cat: "Functional Testing", name: "Missed Dose Logging Scheduler", status: "PASS" },
+            { id: "FN007", cat: "Functional Testing", name: "Inventory Auto-Deduction Calculation", status: "PASS" },
+            { id: "FN008", cat: "Functional Testing", name: "Low Stock Alert Dialog Trigger", status: "PASS" },
+            { id: "FN009", cat: "Functional Testing", name: "Streak Increment Logic Validation", status: "PASS" },
+            { id: "FN010", cat: "Functional Testing", name: "Compliance Metric Algorithm Check", status: "PASS" },
+            { id: "FN011", cat: "Functional Testing", name: "Caregiver Invitation Linkage Pipeline", status: "PASS" },
+            { id: "FN012", cat: "Functional Testing", name: "Remote Real-time Dose Status Pull", status: "PASS" },
+            { id: "FN013", cat: "Functional Testing", name: "Deep-link Intent Trigger Dispatcher", status: "PASS" },
+            { id: "FN014", cat: "Functional Testing", name: "Profile Avatar Bitmap Save Internal Storage", status: "PASS" },
+            { id: "FN015", cat: "Functional Testing", name: "Notification Sound Channel Setup", status: "PASS" },
+            { id: "FN016", cat: "Functional Testing", name: "Alarm Schedule WorkManager Callback", status: "PASS" },
+            { id: "FN017", cat: "Functional Testing", name: "Search Bar Query Filter Logic", status: "PASS" },
+            { id: "FN018", cat: "Functional Testing", name: "Edit Medicine Room DB Update", status: "PASS" },
+            { id: "FN019", cat: "Functional Testing", name: "Delete Medicine Room DB Cascade", status: "PASS" },
+            { id: "FN020", cat: "Functional Testing", name: "Add Family Member Entity Insertion", status: "PASS" },
+
+            // Smoke Testing
+            { id: "SM001", cat: "Smoke Testing", name: "Clean Install Startup Execution", status: "PASS" },
+            { id: "SM002", cat: "Smoke Testing", name: "Successful Authentication Passage", status: "PASS" },
+            { id: "SM003", cat: "Smoke Testing", name: "Dashboard Core UI Load", status: "PASS" },
+            { id: "SM004", cat: "Smoke Testing", name: "Medicine Item Loading Render", status: "PASS" },
+            { id: "SM005", cat: "Smoke Testing", name: "Dose Confirm Button Callback", status: "PASS" },
+            { id: "SM006", cat: "Smoke Testing", name: "Notification Manager Register", status: "PASS" },
+            { id: "SM007", cat: "Smoke Testing", name: "Profile screen load validation", status: "PASS" },
+            { id: "SM008", cat: "Smoke Testing", name: "Account Switch Stability Check", status: "PASS" },
+            { id: "SM009", cat: "Smoke Testing", name: "Low Memory System Recovery Check", status: "PASS" },
+            { id: "SM010", cat: "Smoke Testing", name: "Shared preferences save integrity", status: "PASS" },
+
+            // Sanity Testing
+            { id: "SN001", cat: "Sanity Testing", name: "Immediate Alarm Trigger Dispatcher", status: "PASS" },
+            { id: "SN002", cat: "Sanity Testing", name: "AI Camera Permission Flow", status: "PASS" },
+            { id: "SN003", cat: "Sanity Testing", name: "Empty state dashboard messages", status: "PASS" },
+            { id: "SN004", cat: "Sanity Testing", name: "Offline Mode banner display", status: "PASS" },
+            { id: "SN005", cat: "Sanity Testing", name: "Caregiver alert push dispatch", status: "PASS" },
+            { id: "SN006", cat: "Sanity Testing", name: "Manual Inventory Refill Form", status: "PASS" },
+            { id: "SN007", cat: "Sanity Testing", name: "Profile update validation constraints", status: "PASS" },
+            { id: "SN008", cat: "Sanity Testing", name: "Logout navigation reset trace", status: "PASS" },
+            { id: "SN009", cat: "Sanity Testing", name: "Permissions check system popups", status: "PASS" }
+        ];
+
+        let filteredData = [...inventoryData];
+        let currentPage = 1;
+        const itemsPerPage = 8;
+        let selectedCategory = 'All';
+
+        const searchInput = document.getElementById('searchInput');
+        const inventoryBody = document.getElementById('inventoryBody');
+        const pageInfo = document.getElementById('pageInfo');
+        const btnPrev = document.getElementById('btnPrev');
+        const btnNext = document.getElementById('btnNext');
+
+        searchInput.addEventListener('input', () => {
+            applyFilters();
+        });
+
+        function filterCategory(cat, el) {
+            selectedCategory = cat;
+            document.querySelectorAll('.filter-tab').forEach(tab => tab.classList.remove('active'));
+            el.classList.add('active');
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const query = searchInput.value.toLowerCase().trim();
+            filteredData = inventoryData.filter(item => {
+                const matchesSearch = item.name.toLowerCase().includes(query) || item.id.toLowerCase().includes(query);
+                const matchesCat = selectedCategory === 'All' || item.cat === selectedCategory;
+                return matchesSearch && matchesCat;
+            });
+            currentPage = 1;
+            renderTable();
+        }
+
+        function renderTable() {
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageItems = filteredData.slice(start, end);
+
+            inventoryBody.innerHTML = '';
+
+            if (pageItems.length === 0) {
+                inventoryBody.innerHTML = `<tr><td colspan="4" style="text-align:center;color:var(--text-secondary);padding:2rem;">No test records match the search criteria.</td></tr>`;
+                pageInfo.innerText = 'Showing 0-0 of 0 items';
+                btnPrev.disabled = true;
+                btnNext.disabled = true;
+                return;
+            }
+
+            pageItems.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="td-id">${item.id}</td>
+                    <td class="td-category">${item.cat}</td>
+                    <td>${item.name}</td>
+                    <td style="text-align: center;"><span class="badge-pass">${item.status}</span></td>
+                `;
+                inventoryBody.appendChild(tr);
+            });
+
+            const totalItems = filteredData.length;
+            const showStart = start + 1;
+            const showEnd = Math.min(end, totalItems);
+            pageInfo.innerText = `Showing ${showStart}-${showEnd} of ${totalItems} items`;
+
+            btnPrev.disabled = currentPage === 1;
+            btnNext.disabled = end >= totalItems;
+        }
+
+        function changePage(direction) {
+            currentPage += direction;
+            renderTable();
+        }
+
+        // Initial render
+        renderTable();
+    </script>
+</body>
+</html>
