@@ -58,35 +58,27 @@ jobs:
           .\gradlew assembleDebug
 
       - name: Run E2E Appium Tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 33
-          target: google_apis
-          arch: x86_64
-          force-avd-creation: false
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-          disable-animations: true
-          script: |
-            # Check if Appium is already running on port 4723
-            python -c "import socket; s = socket.socket(); s.settimeout(1); exit(0 if s.connect_ex(('127.0.0.1', 4723)) == 0 else 1)"
-            if ($LASTEXITCODE -eq 0) {
-              Write-Output "Appium server is already running on port 4723."
-            } else {
-              Write-Output "Appium server is not running. Starting Appium..."
-              Start-Process appium -NoNewWindow
-              # Wait up to 30 seconds for Appium to start
-              for ($i=1; $i -le 15; $i++) {
-                Start-Sleep -Seconds 2
-                python -c "import socket; s = socket.socket(); s.settimeout(1); exit(0 if s.connect_ex(('127.0.0.1', 4723)) == 0 else 1)"
-                if ($LASTEXITCODE -eq 0) {
-                  Write-Output "Appium server started successfully."
-                  break
-                }
+        run: |
+          # Check if Appium is already running on port 4723
+          python -c "import socket; s = socket.socket(); s.settimeout(1); exit(0 if s.connect_ex(('127.0.0.1', 4723)) == 0 else 1)"
+          if ($LASTEXITCODE -eq 0) {
+            Write-Output "Appium server is already running on port 4723."
+          } else {
+            Write-Output "Appium server is not running. Starting Appium..."
+            Start-Process appium -NoNewWindow
+            # Wait up to 30 seconds for Appium to start
+            for ($i=1; $i -le 15; $i++) {
+              Start-Sleep -Seconds 2
+              python -c "import socket; s = socket.socket(); s.settimeout(1); exit(0 if s.connect_ex(('127.0.0.1', 4723)) == 0 else 1)"
+              if ($LASTEXITCODE -eq 0) {
+                Write-Output "Appium server started successfully."
+                break
               }
             }
-            
-            # Execute only the existing Python test command
-            python appium_tests/run_all_tests.py
+          }
+          
+          # Execute only the existing Python test command
+          python appium_tests/run_all_tests.py
 
       - name: Upload Test Reports
         if: always()
