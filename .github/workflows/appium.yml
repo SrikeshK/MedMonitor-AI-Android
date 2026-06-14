@@ -10,9 +10,6 @@ on:
 jobs:
   appium-tests:
     runs-on: self-hosted
-    defaults:
-      run:
-        shell: bash
     
     steps:
       - name: Checkout Repository
@@ -50,16 +47,15 @@ jobs:
         env:
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
         run: |
-          if [ -z "$GOOGLE_SERVICES_JSON" ]; then
-            echo "Warning: GOOGLE_SERVICES_JSON secret is not set!"
-          else
-            echo "$GOOGLE_SERVICES_JSON" > app/google-services.json
-          fi
+          if ($env:GOOGLE_SERVICES_JSON) {
+            $env:GOOGLE_SERVICES_JSON | Out-File -FilePath app/google-services.json -Encoding utf8
+          } else {
+            Write-Output "Warning: GOOGLE_SERVICES_JSON secret is not set!"
+          }
 
       - name: Build Debug APK
         run: |
-          chmod +x gradlew
-          ./gradlew assembleDebug
+          .\gradlew assembleDebug
 
       - name: Run E2E Appium Tests
         uses: reactivecircus/android-emulator-runner@v2
@@ -72,20 +68,22 @@ jobs:
           disable-animations: true
           script: |
             # Check if Appium is already running on port 4723
-            if python -c "import socket; s = socket.socket(); s.settimeout(1); exit(0 if s.connect_ex(('127.0.0.1', 4723)) == 0 else 1)"; then
-              echo "Appium server is already running on port 4723."
-            else
-              echo "Appium server is not running. Starting Appium..."
-              appium &
+            python -c "import socket; s = socket.socket(); s.settimeout(1); exit(0 if s.connect_ex(('127.0.0.1', 4723)) == 0 else 1)"
+            if ($LASTEXITCODE -eq 0) {
+              Write-Output "Appium server is already running on port 4723."
+            } else {
+              Write-Output "Appium server is not running. Starting Appium..."
+              Start-Process appium -NoNewWindow
               # Wait up to 30 seconds for Appium to start
-              for i in {1..15}; do
-                if python -c "import socket; s = socket.socket(); s.settimeout(1); exit(0 if s.connect_ex(('127.0.0.1', 4723)) == 0 else 1)"; then
-                  echo "Appium server started successfully."
+              for ($i=1; $i -le 15; $i++) {
+                Start-Sleep -Seconds 2
+                python -c "import socket; s = socket.socket(); s.settimeout(1); exit(0 if s.connect_ex(('127.0.0.1', 4723)) == 0 else 1)"
+                if ($LASTEXITCODE -eq 0) {
+                  Write-Output "Appium server started successfully."
                   break
-                fi
-                sleep 2
-              done
-            fi
+                }
+              }
+            }
             
             # Execute only the existing Python test command
             python appium_tests/run_all_tests.py
