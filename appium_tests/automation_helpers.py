@@ -143,10 +143,10 @@ class AutomationHelper:
     def safe_click(self, resource_id, name=None, timeout=10, is_optional=False):
         # RULE 8: SAFE CLICK STRATEGY
         name = name or resource_id
-        loc = (By.ID, f"{self.pkg}:id/{resource_id}")
 
         # Attempt 1: Normal click
         try:
+            loc = (By.ID, f"{self.pkg}:id/{resource_id}")
             el = self.wait_for_and_verify(loc, timeout=2)
             if el:
                 el.click()
@@ -157,6 +157,7 @@ class AutomationHelper:
         # Attempt 2: Wait 2 seconds and retry
         time.sleep(2)
         try:
+            loc = (By.ID, f"{self.pkg}:id/{resource_id}")
             el = self.wait_for_and_verify(loc, timeout=timeout)
             if el:
                 el.click()
@@ -166,6 +167,7 @@ class AutomationHelper:
 
         # Attempt 3: Action click (Tapping coordinate)
         try:
+            loc = (By.ID, f"{self.pkg}:id/{resource_id}")
             el = self.driver.find_element(*loc)
             location = el.location
             size = el.size
@@ -313,7 +315,7 @@ class AutomationHelper:
 
     def validate_caregiver_dashboard(self):
         # RULE 10: Caregiver dashboard validation is Optional
-        self.log_step("Validating Caregiver Dashboard (Optional)")
+        self.log_step("Validating Caregiver Dashboard")
         elements = ["tvGreeting", "cardCareOverview", "btnAddPatient", "llActivePatients"]
         for res_id in elements:
             self.wait_until_visible(res_id, timeout=3, is_optional=True)

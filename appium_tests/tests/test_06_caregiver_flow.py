@@ -44,7 +44,7 @@ def test_caregiver_full_flow():
             raise Exception(f"CRITICAL: Authentication failed - {str(e)}")
 
         # 2. Navigate to Profile (Rule 10: Optional)
-        h.log_step("Navigating to Profile (Optional)")
+        h.log_step("Navigating to Profile")
         if h.safe_click("navigation_profile", "Profile Tab", is_optional=True):
             # 3. Scroll to Switch Role Card
             h.scroll_to_id("cardSwitchMode", is_optional=True)
@@ -65,7 +65,7 @@ def test_caregiver_full_flow():
                 h.validate_caregiver_dashboard()
 
                 # 9. Additional Logic
-                h.log_step("Testing Add Patient (Optional)")
+                h.log_step("Testing Add Patient")
                 if h.safe_click("btnAddPatient", "Add Patient Button", is_optional=True):
                     try:
                         name_field = h.wait_for_and_verify((h.By.ID, f"{h.pkg}:id/etPatientName"), timeout=5)

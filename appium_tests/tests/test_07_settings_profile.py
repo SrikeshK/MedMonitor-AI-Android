@@ -44,11 +44,11 @@ def test_profile_and_settings():
         h.handle_mode_selection("patient")
 
         # 1. Navigate to Profile (Rule 2: Optional)
-        h.log_step("Navigating to Profile (Optional)")
+        h.log_step("Navigating to Profile")
         if h.navigate_and_verify("navigation_profile", "MainActivity", "Profile", is_optional=True):
 
             # 2. Edit Profile (Optional)
-            h.log_step("Checking Edit Profile (Optional)")
+            h.log_step("Checking Edit Profile")
             if h.safe_click("btnEditAvatar", "Edit Avatar Button", timeout=5, is_optional=True):
                 try:
                     name_field = h.wait_for_and_verify((h.By.ID, f"{h.pkg}:id/etName"), timeout=5)
@@ -62,7 +62,7 @@ def test_profile_and_settings():
                     h.log_internal_debug("Profile edit interaction failed")
 
             # 3. Settings Navigation (Rule 11: Optional)
-            h.log_step("Checking Settings Navigation (Optional)")
+            h.log_step("Checking Settings Navigation")
             if h.safe_click("cardSettings", "Settings Card", timeout=5, is_optional=True):
                 # Verify settings components but don't fail
                 if h.wait_until_visible("cardGeneral", timeout=5, is_optional=True):

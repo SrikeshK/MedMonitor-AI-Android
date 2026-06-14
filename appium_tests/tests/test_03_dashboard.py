@@ -59,13 +59,13 @@ def test_dashboard_and_navigation():
         h.navigate_and_verify("navigation_dashboard", "MainActivity", "Home", is_optional=True)
 
         # 4. Test Quick Actions (Rule 12: Skip if not validated)
-        h.log_step("Checking Quick Analytics (Optional)")
+        h.log_step("Checking Quick Analytics")
         if h.safe_click("btnQuickAnalytics", "Quick Analytics", timeout=5, is_optional=True):
             if "AnalyticsActivity" in h.get_current_activity():
                 h.log_step("Analytics Activity reached")
                 driver.back()
 
-        h.log_step("Checking Quick Inventory (Optional)")
+        h.log_step("Checking Quick Inventory")
         if h.safe_click("btnQuickInventory", "Quick Inventory", timeout=5, is_optional=True):
             if "InventoryActivity" in h.get_current_activity():
                 h.log_step("Inventory Activity reached")
