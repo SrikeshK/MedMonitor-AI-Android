@@ -34,6 +34,7 @@ class CaregiverMedicineAlarmScheduler(private val context: Context) {
                     putExtra("dosage", medicine.dosage)
                     putExtra("slot", slotName)
                     putExtra("time", timeStr)
+
                 }
 
                 val requestCode = (cleanPatId + cleanMedId + slotName).hashCode()
