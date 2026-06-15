@@ -49,7 +49,7 @@ def test_analytics_and_inventory():
         h.scroll_to_id("tvExploreTitle", is_optional=True)
 
         # 1. Test Quick Analytics (Rule 12: Skip if not reached)
-        h.log_step("Checking Quick Analytics (Optional)")
+        h.log_step("Checking Quick Analytics")
         if h.safe_click("btnQuickAnalytics", "Quick Analytics Button", timeout=5, is_optional=True):
             if "AnalyticsActivity" in h.get_current_activity():
                 h.log_step("Analytics Activity reached")
@@ -61,7 +61,7 @@ def test_analytics_and_inventory():
         h.scroll_to_id("tvExploreTitle", is_optional=True)
 
         # 2. Test Quick Inventory (Rule 12: Skip if not reached)
-        h.log_step("Checking Quick Inventory (Optional)")
+        h.log_step("Checking Quick Inventory")
         if h.safe_click("btnQuickInventory", "Quick Inventory Button", timeout=5, is_optional=True):
             if "InventoryActivity" in h.get_current_activity():
                 h.log_step("Inventory Activity reached")
