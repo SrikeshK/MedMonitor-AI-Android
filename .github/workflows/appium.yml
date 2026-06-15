@@ -10,10 +10,13 @@ on:
 jobs:
   appium-tests:
     runs-on: self-hosted
-    
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -76,13 +79,67 @@ jobs:
               }
             }
           }
-          
+
           # Execute only the existing Python test command
           python appium_tests/run_all_tests.py
 
-      - name: Upload Test Reports
+      # ---------------------------------------------------------------
+      # Publish Test Report to GitHub Pages (docs/reports/)
+      # This replaces the old artifact upload so the report is a
+      # live webpage, not a downloadable zip file.
+      # ---------------------------------------------------------------
+      - name: Publish HTML Report to GitHub Pages
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: medmonitor-test-reports
-          path: appium_tests/reports/
+        shell: pwsh
+        run: |
+          # Ensure the docs/reports directory exists
+          New-Item -ItemType Directory -Force -Path "docs/reports" | Out-Null
+
+          # Copy the newly generated HTML report (if it exists) into docs/reports/
+          $generatedReport = "appium_tests/reports/Test_Report.html"
+          $destinationReport = "docs/reports/Test_Report.html"
+
+          if (Test-Path $generatedReport) {
+            Write-Output "Copying fresh HTML report from appium_tests/reports/ to docs/reports/ ..."
+            Copy-Item -Path $generatedReport -Destination $destinationReport -Force
+          } else {
+            Write-Output "No fresh report generated. The existing docs/reports/Test_Report.html will be re-published."
+          }
+
+          # Configure git identity for the commit
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Stage and commit only the report file
+          git add docs/reports/Test_Report.html
+          git diff --cached --quiet
+          if ($LASTEXITCODE -ne 0) {
+            git commit -m "ci: update test report [skip ci]"
+            git push origin HEAD:main
+            Write-Output "Test report committed and pushed to docs/reports/."
+          } else {
+            Write-Output "Report unchanged — nothing to commit."
+          }
+
+      # ---------------------------------------------------------------
+      # Add a clickable link to the report in the Actions Summary page
+      # ---------------------------------------------------------------
+      - name: Post Report Link to Job Summary
+        if: always()
+        shell: pwsh
+        run: |
+          $reportUrl = "https://srikeshk.github.io/MedMonitor-AI-Android/reports/Test_Report.html"
+          $mainUrl    = "https://srikeshk.github.io/MedMonitor-AI-Android/"
+
+          $summary = @"
+          ## 🧪 MedMonitor AI — Test Report
+
+          | Resource | Link |
+          |----------|------|
+          | 📊 **Live Test Report** | [$reportUrl]($reportUrl) |
+          | 🌐 **Project Website**  | [$mainUrl]($mainUrl) |
+
+          > _Report is published via GitHub Pages. Click the link above to view the full interactive HTML dashboard._
+          "@
+
+          $summary | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Encoding utf8 -Append
