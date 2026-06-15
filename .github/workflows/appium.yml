@@ -90,10 +90,11 @@ jobs:
       # ---------------------------------------------------------------
       - name: Publish HTML Report to GitHub Pages
         if: always()
-        shell: pwsh
+        shell: powershell
         run: |
-          # Ensure the docs/reports directory exists
+          # Ensure the docs/reports and docs/downloads directories exist
           New-Item -ItemType Directory -Force -Path "docs/reports" | Out-Null
+          New-Item -ItemType Directory -Force -Path "docs/downloads" | Out-Null
 
           # Copy the newly generated HTML report (if it exists) into docs/reports/
           $generatedReport = "appium_tests/reports/Test_Report.html"
@@ -106,19 +107,41 @@ jobs:
             Write-Output "No fresh report generated. The existing docs/reports/Test_Report.html will be re-published."
           }
 
+          # Copy the newly generated Excel report (if it exists) into docs/reports/
+          $generatedExcel = "appium_tests/reports/MedMonitor_Automation_Report.xlsx"
+          $destinationExcel = "docs/reports/MedMonitor_Test_Report.xlsx"
+
+          if (Test-Path $generatedExcel) {
+            Write-Output "Copying fresh Excel report from appium_tests/reports/ to docs/reports/ ..."
+            Copy-Item -Path $generatedExcel -Destination $destinationExcel -Force
+          } else {
+            Write-Output "No fresh Excel report generated."
+          }
+
+          # Copy the newly built APK (if it exists) into docs/downloads/
+          $generatedApk = "app/build/outputs/apk/debug/app-debug.apk"
+          $destinationApk = "docs/downloads/MedMonitorAI.apk"
+
+          if (Test-Path $generatedApk) {
+            Write-Output "Copying fresh APK build from app/build/outputs/apk/debug/ to docs/downloads/ ..."
+            Copy-Item -Path $generatedApk -Destination $destinationApk -Force
+          } else {
+            Write-Output "No fresh APK build generated."
+          }
+
           # Configure git identity for the commit
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Stage and commit only the report file
-          git add docs/reports/Test_Report.html
+          # Stage and commit report files and APK
+          git add docs/reports/Test_Report.html docs/reports/MedMonitor_Test_Report.xlsx docs/downloads/MedMonitorAI.apk
           git diff --cached --quiet
           if ($LASTEXITCODE -ne 0) {
-            git commit -m "ci: update test report [skip ci]"
+            git commit -m "ci: update test report and build artifacts [skip ci]"
             git push origin HEAD:main
-            Write-Output "Test report committed and pushed to docs/reports/."
+            Write-Output "Test report and build artifacts committed and pushed to docs/."
           } else {
-            Write-Output "Report unchanged — nothing to commit."
+            Write-Output "Artifacts unchanged — nothing to commit."
           }
 
       # ---------------------------------------------------------------
@@ -126,7 +149,7 @@ jobs:
       # ---------------------------------------------------------------
       - name: Post Report Link to Job Summary
         if: always()
-        shell: pwsh
+        shell: powershell
         run: |
           $reportUrl = "https://srikeshk.github.io/MedMonitor-AI-Android/reports/Test_Report.html"
           $mainUrl    = "https://srikeshk.github.io/MedMonitor-AI-Android/"
