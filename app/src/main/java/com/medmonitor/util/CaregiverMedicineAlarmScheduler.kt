@@ -17,7 +17,8 @@ class CaregiverMedicineAlarmScheduler(private val context: Context) {
     private val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
     @SuppressLint("ScheduleExactAlarm")
-    fun schedule(medicine: CaregiverMedicine) {
+    fun schedule(medicine: CaregiverMedicine)
+    {
         val cleanMedId = medicine.id.trim()
         val cleanPatId = medicine.patientId.trim()
 
