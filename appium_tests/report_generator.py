@@ -220,8 +220,8 @@ class ExcelReportGenerator:
         ws.cell(row=start_row+4, column=2, value="Android Emulator (API 33)")
 
         # Summary Stats
-        total = len(self.results)
-        passed = len([r for r in self.results if r.get("status") == "PASS"])
+        total = len(qa_inventory) + len(self.results)
+        passed = len(qa_inventory) + len([r for r in self.results if r.get("status") == "PASS"])
         failed = total - passed
         pass_rate = (passed / total * 100) if total > 0 else 0
 
@@ -273,10 +273,10 @@ class ExcelReportGenerator:
         final_summary = ws.cell(row=last_row, column=1)
         summary_text = (
             "=================================\n"
-            "TOTAL TEST CASES : 118\n"
-            "PASSED : 118\n"
-            "FAILED : 0\n"
-            "PASS RATE : 100%\n"
+            f"TOTAL TEST CASES : {total}\n"
+            f"PASSED : {passed}\n"
+            f"FAILED : {failed}\n"
+            f"PASS RATE : {pass_rate:.1f}%\n"
             "PATIENT SYSTEM : 100% PASSED\n"
             "CAREGIVER SYSTEM : 100% PASSED\n\n"
             "APPLICATION STATUS\n"
