@@ -1,0 +1,59 @@
+name: Android Performance Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  performance-tests:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Reconstruct google-services.json
+        env:
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: |
+          if ($env:GOOGLE_SERVICES_JSON) {
+            $env:GOOGLE_SERVICES_JSON | Out-File -FilePath app/google-services.json -Encoding utf8
+          } else {
+            Write-Output "Warning: GOOGLE_SERVICES_JSON secret is not set!"
+          }
+
+      - name: Build Debug APK
+        run: |
+          .\gradlew assembleDebug
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r performance_tests/requirements.txt
+
+      - name: Run Performance Test Suite
+        run: |
+          python performance_tests/run_performance_tests.py
+
+      - name: Upload Performance Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-performance-reports
+          path: android-performance-reports/
+          retention-days: 7
+          if-no-files-found: error
