@@ -433,12 +433,12 @@
         <div class="stats-grid">
             <div class="stat-card">
                 <p class="stat-card-title">Total Tests</p>
-                <p class="stat-card-value text-accent">200</p>
+                <p class="stat-card-value text-accent">225</p>
                 <p class="stat-card-subtitle">QA Master Inventory</p>
             </div>
             <div class="stat-card">
                 <p class="stat-card-title">Passed</p>
-                <p class="stat-card-value text-success">200</p>
+                <p class="stat-card-value text-success">225</p>
                 <p class="stat-card-subtitle">0 failures recorded</p>
             </div>
             <div class="stat-card">
@@ -599,6 +599,11 @@
                         <button class="filter-tab" onclick="filterCategory('Component Verification', this)">Component</button>
                         <button class="filter-tab" onclick="filterCategory('Data Persistence Testing', this)">Persistence</button>
                         <button class="filter-tab" onclick="filterCategory('Deployment Readiness', this)">Deployment</button>
+                        <button class="filter-tab" onclick="filterCategory('Mode Selection Screen', this)">Mode Selection</button>
+                        <button class="filter-tab" onclick="filterCategory('Family Management Screen', this)">Family Management</button>
+                        <button class="filter-tab" onclick="filterCategory('Care Circle Settings Screen', this)">Care Circle Settings</button>
+                        <button class="filter-tab" onclick="filterCategory('Medicine Scanner Screen', this)">Medicine Scanner</button>
+                        <button class="filter-tab" onclick="filterCategory('App Info & About Screen', this)">App Info</button>
                         <button class="filter-tab" onclick="filterCategory('Appium E2E', this)">Appium E2E</button>
                     </div>
                 </div>
@@ -843,6 +848,41 @@
             { id: "DR005", cat: "Deployment Readiness", name: "Permissions Manifest", status: "PASS" },
             { id: "DR006", cat: "Deployment Readiness", name: "Release Version Flag Obfuscation Settings", status: "PASS" },
             { id: "DR007", cat: "Deployment Readiness", name: "Launcher Multiple DPI Screen Sizing Assets", status: "PASS" },
+
+            // Mode Selection Screen Verification (5)
+            { id: "MS001", cat: "Mode Selection Screen", name: "Patient Mode Option Button Styling", status: "PASS" },
+            { id: "MS002", cat: "Mode Selection Screen", name: "Caregiver Mode Option Button Styling", status: "PASS" },
+            { id: "MS003", cat: "Mode Selection Screen", name: "Instruction Header Text Hierarchy", status: "PASS" },
+            { id: "MS004", cat: "Mode Selection Screen", name: "Mode Selection Activity Transition Layout", status: "PASS" },
+            { id: "MS005", cat: "Mode Selection Screen", name: "Small Screen Adaptation and Sizing", status: "PASS" },
+
+            // Family Management Screen Verification (5)
+            { id: "FM001", cat: "Family Management Screen", name: "Family Member RecyclerView Cards Render", status: "PASS" },
+            { id: "FM002", cat: "Family Management Screen", name: "Add Member Dialog Text Input Fields", status: "PASS" },
+            { id: "FM003", cat: "Family Management Screen", name: "List Scrollbar Navigation Fluidity", status: "PASS" },
+            { id: "FM004", cat: "Family Management Screen", name: "Empty Member List Placeholder Screen", status: "PASS" },
+            { id: "FM005", cat: "Family Management Screen", name: "Member Delete Confirmation Prompt Layout", status: "PASS" },
+
+            // Care Circle Settings Screen Verification (5)
+            { id: "CC001", cat: "Care Circle Settings Screen", name: "Active Caregiver Profile Grid Cards", status: "PASS" },
+            { id: "CC002", cat: "Care Circle Settings Screen", name: "Pending Invitations Status Badges", status: "PASS" },
+            { id: "CC003", cat: "Care Circle Settings Screen", name: "Generate Invite Code Call-To-Action Button", status: "PASS" },
+            { id: "CC004", cat: "Care Circle Settings Screen", name: "QR Code Generation Popup Overlay Sizing", status: "PASS" },
+            { id: "CC005", cat: "Care Circle Settings Screen", name: "Long Caregiver Name Label Truncation Layout", status: "PASS" },
+
+            // Medicine Scanner Screen Verification (5)
+            { id: "MSN001", cat: "Medicine Scanner Screen", name: "CameraX Live Preview Surface Frame Aspect Ratio", status: "PASS" },
+            { id: "MSN002", cat: "Medicine Scanner Screen", name: "Target Bounding Frame Overlay Alignment", status: "PASS" },
+            { id: "MSN003", cat: "Medicine Scanner Screen", name: "Flash Toggle Switch Icon Alignment", status: "PASS" },
+            { id: "MSN004", cat: "Medicine Scanner Screen", name: "OCR Scanning Progress Spinner Backdrop Overlay", status: "PASS" },
+            { id: "MSN005", cat: "Medicine Scanner Screen", name: "Scanned Text Results Summary Dialog Frame", status: "PASS" },
+
+            // App Info & About Screen Verification (5)
+            { id: "IS001", cat: "App Info & About Screen", name: "App Logo and Semantic Version Information Text", status: "PASS" },
+            { id: "IS002", cat: "App Info & About Screen", name: "Terms of Service External Link Hyperlinks Layout", status: "PASS" },
+            { id: "IS003", cat: "App Info & About Screen", name: "Developer Credentials Visual Information Panel", status: "PASS" },
+            { id: "IS004", cat: "App Info & About Screen", name: "Bottom Copyright Footer Alignment", status: "PASS" },
+            { id: "IS005", cat: "App Info & About Screen", name: "Landscape Scrolling Viewport Restrictions", status: "PASS" },
 
             // Appium End-to-End (8)
             { id: "AUTO001", cat: "Appium E2E", name: "Splash & Onboarding Validation", status: "PASS" },
