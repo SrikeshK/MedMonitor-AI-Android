@@ -78,12 +78,20 @@ jobs:
           # Execute only the existing Python test command
           python appium_tests/run_all_tests.py
 
+      - name: Copy HTML Report to Test Reports
+        if: always()
+        run: |
+          if (Test-Path docs/reports/Test_Report.html) {
+            Copy-Item docs/reports/Test_Report.html -Destination appium_tests/reports/Test_Report.html -Force
+            Write-Output "Successfully copied HTML report to appium_tests/reports/"
+          } else {
+            Write-Output "Warning: docs/reports/Test_Report.html not found!"
+          }
+
       - name: Upload Test Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: medmonitor-test-reports
-          path: |
-            appium_tests/reports/
-            appium_tests/screenshots/
+          path: appium_tests/reports/
           if-no-files-found: ignore
