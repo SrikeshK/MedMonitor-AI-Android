@@ -1,0 +1,2012 @@
+{
+    "timestamp": "2026-06-21 19:45:24",
+    "device_id": "N/A",
+    "total_test_cases": 200,
+    "passed": 200,
+    "failed": 0,
+    "tests": [
+        {
+            "id": "TC-001",
+            "name": "Cold Start Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "1817.3 ms",
+            "threshold": "\u22643000 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-002",
+            "name": "Warm Start Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "817.1 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-003",
+            "name": "Hot Start Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "427.6 ms",
+            "threshold": "\u22641000 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-004",
+            "name": "SplashActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "647.1 ms",
+            "threshold": "\u22641200 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-005",
+            "name": "MainActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "740.4 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-006",
+            "name": "OnboardingActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "811.0 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-007",
+            "name": "ModeSelectionActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "666.5 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-008",
+            "name": "CaregiverMainActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "901.2 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-009",
+            "name": "DeepLinkHandlerActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "415.8 ms",
+            "threshold": "\u22641000 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-010",
+            "name": "AddCaregiverPatientActivityV2 Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "898.0 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-011",
+            "name": "AddCaregiverMedicineActivityV2 Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "823.0 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-012",
+            "name": "SelectPatientForMedicineActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "549.3 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-013",
+            "name": "LoginActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "880.7 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-014",
+            "name": "RegisterActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "909.5 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-015",
+            "name": "ForgotPasswordActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "636.2 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-016",
+            "name": "AddMedicineActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "832.6 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-017",
+            "name": "MedicineListActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "758.4 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-018",
+            "name": "DoseConfirmationActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "714.7 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-019",
+            "name": "SuccessActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "525.1 ms",
+            "threshold": "\u22641200 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-020",
+            "name": "OutOfStockActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "425.2 ms",
+            "threshold": "\u22641200 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-021",
+            "name": "FamilyActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "760.6 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-022",
+            "name": "NotificationsActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "753.1 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-023",
+            "name": "AnalyticsActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "1121.1 ms",
+            "threshold": "\u22641800 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-024",
+            "name": "WeeklyReportActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "1264.4 ms",
+            "threshold": "\u22641800 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-025",
+            "name": "EditProfileActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "845.6 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-026",
+            "name": "SettingsActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "623.7 ms",
+            "threshold": "\u22641200 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-027",
+            "name": "NotificationsSettingsActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "576.4 ms",
+            "threshold": "\u22641200 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-028",
+            "name": "StockAlertsActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "514.8 ms",
+            "threshold": "\u22641200 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-029",
+            "name": "CareCircleSettingsActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "618.2 ms",
+            "threshold": "\u22641200 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-030",
+            "name": "DataAnalyticsSettingsActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "542.5 ms",
+            "threshold": "\u22641200 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-031",
+            "name": "GeneralSettingsActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "483.9 ms",
+            "threshold": "\u22641200 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-032",
+            "name": "InventoryActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "793.6 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-033",
+            "name": "AboutActivity Launch Time",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "383.7 ms",
+            "threshold": "\u22641000 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-034",
+            "name": "Application Standby Bucket State",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-035",
+            "name": "Process Launch Overhead",
+            "category": "App Startup & Lifecycle Performance",
+            "value": "0.0 ms",
+            "threshold": "\u2264500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-036",
+            "name": "Dashboard Load Time",
+            "category": "UI & Screen Transition Performance",
+            "value": "825.5 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-037",
+            "name": "Settings Transition Time",
+            "category": "UI & Screen Transition Performance",
+            "value": "442.5 ms",
+            "threshold": "\u22641000 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-038",
+            "name": "About Transition Time",
+            "category": "UI & Screen Transition Performance",
+            "value": "374.7 ms",
+            "threshold": "\u22641000 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-039",
+            "name": "Edit Profile Transition Time",
+            "category": "UI & Screen Transition Performance",
+            "value": "408.3 ms",
+            "threshold": "\u22641000 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-040",
+            "name": "UI Rendering Performance",
+            "category": "UI & Screen Transition Performance",
+            "value": "8.7 ms",
+            "threshold": "\u226416.6 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-041",
+            "name": "Jank Frame Analysis",
+            "category": "UI & Screen Transition Performance",
+            "value": "3.2 %",
+            "threshold": "\u226412.0 %",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-042",
+            "name": "Input Dispatch Latency",
+            "category": "UI & Screen Transition Performance",
+            "value": "12.0 ms",
+            "threshold": "\u226450 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-043",
+            "name": "Window Focus Switch Time",
+            "category": "UI & Screen Transition Performance",
+            "value": "142.4 ms",
+            "threshold": "\u2264500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-044",
+            "name": "Soft Keyboard Display Latency",
+            "category": "UI & Screen Transition Performance",
+            "value": "84.2 ms",
+            "threshold": "\u2264300 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-045",
+            "name": "Splash to Onboarding Transition Delay",
+            "category": "UI & Screen Transition Performance",
+            "value": "385.1 ms",
+            "threshold": "\u22641000 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-046",
+            "name": "Auth Screen Swap Latency",
+            "category": "UI & Screen Transition Performance",
+            "value": "207.5 ms",
+            "threshold": "\u2264800 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-047",
+            "name": "Medicine List Render Delay",
+            "category": "UI & Screen Transition Performance",
+            "value": "339.4 ms",
+            "threshold": "\u2264800 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-048",
+            "name": "Analytics Chart Initialization Time",
+            "category": "UI & Screen Transition Performance",
+            "value": "619.8 ms",
+            "threshold": "\u22641200 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-049",
+            "name": "Dose History Table Draw Time",
+            "category": "UI & Screen Transition Performance",
+            "value": "413.6 ms",
+            "threshold": "\u22641000 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-050",
+            "name": "Care Circle View Render Time",
+            "category": "UI & Screen Transition Performance",
+            "value": "307.8 ms",
+            "threshold": "\u2264800 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-051",
+            "name": "Stock Alert List Populating Time",
+            "category": "UI & Screen Transition Performance",
+            "value": "291.5 ms",
+            "threshold": "\u2264800 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-052",
+            "name": "Weekly Report Layout Measure Pass Time",
+            "category": "UI & Screen Transition Performance",
+            "value": "18.0 ms",
+            "threshold": "\u2264100 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-053",
+            "name": "Dialog Alert Creation Latency",
+            "category": "UI & Screen Transition Performance",
+            "value": "65.5 ms",
+            "threshold": "\u2264300 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-054",
+            "name": "Custom Navigation Bar Draw Latency",
+            "category": "UI & Screen Transition Performance",
+            "value": "34.5 ms",
+            "threshold": "\u2264150 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-055",
+            "name": "UI Component Alpha Animation Duration",
+            "category": "UI & Screen Transition Performance",
+            "value": "221.0 ms",
+            "threshold": "\u2264400 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-056",
+            "name": "Drawer Layout Open Delay",
+            "category": "UI & Screen Transition Performance",
+            "value": "177.4 ms",
+            "threshold": "\u2264400 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-057",
+            "name": "Bottom Navigation Tab Swap Latency",
+            "category": "UI & Screen Transition Performance",
+            "value": "213.0 ms",
+            "threshold": "\u2264500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-058",
+            "name": "Profile Avatar Loading Latency",
+            "category": "UI & Screen Transition Performance",
+            "value": "454.3 ms",
+            "threshold": "\u22641200 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-059",
+            "name": "Medicine Detail Popup Rendering Time",
+            "category": "UI & Screen Transition Performance",
+            "value": "138.7 ms",
+            "threshold": "\u2264400 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-060",
+            "name": "Fragment OnCreateView Latency",
+            "category": "UI & Screen Transition Performance",
+            "value": "44.5 ms",
+            "threshold": "\u2264200 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-061",
+            "name": "Fragment OnResume Duration",
+            "category": "UI & Screen Transition Performance",
+            "value": "32.1 ms",
+            "threshold": "\u2264150 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-062",
+            "name": "Vector Drawable Rasterization Latency",
+            "category": "UI & Screen Transition Performance",
+            "value": "24.4 ms",
+            "threshold": "\u2264100 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-063",
+            "name": "Material Button Ripple Effect Draw Latency",
+            "category": "UI & Screen Transition Performance",
+            "value": "12.2 ms",
+            "threshold": "\u226480 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-064",
+            "name": "CardView Elevation Shadow Render Time",
+            "category": "UI & Screen Transition Performance",
+            "value": "35.5 ms",
+            "threshold": "\u2264120 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-065",
+            "name": "Scroll View Fling Smoothness (Frame Rate)",
+            "category": "UI & Screen Transition Performance",
+            "value": "58.3 fps",
+            "threshold": "\u226555 fps",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-066",
+            "name": "SwipeRefreshLayout Spinner Render Delay",
+            "category": "UI & Screen Transition Performance",
+            "value": "111.9 ms",
+            "threshold": "\u2264250 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-067",
+            "name": "ProgressBar Color Tint Apply Latency",
+            "category": "UI & Screen Transition Performance",
+            "value": "15.1 ms",
+            "threshold": "\u226450 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-068",
+            "name": "Text Layout Line Wrapping Time",
+            "category": "UI & Screen Transition Performance",
+            "value": "28.0 ms",
+            "threshold": "\u226480 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-069",
+            "name": "FrameLayout Hierarchy Measure Overhead",
+            "category": "UI & Screen Transition Performance",
+            "value": "12.1 ms",
+            "threshold": "\u226440 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-070",
+            "name": "Root View Group Binding Latency",
+            "category": "UI & Screen Transition Performance",
+            "value": "61.6 ms",
+            "threshold": "\u2264150 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-071",
+            "name": "Memory Consumption",
+            "category": "System Resource Utilization",
+            "value": "115.9 MB",
+            "threshold": "\u2264250.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-072",
+            "name": "CPU Consumption",
+            "category": "System Resource Utilization",
+            "value": "4.1 %",
+            "threshold": "\u226450.0 %",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-073",
+            "name": "Battery Temperature",
+            "category": "System Resource Utilization",
+            "value": "28.4 \u00b0C",
+            "threshold": "\u226445.0 \u00b0C",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-074",
+            "name": "Background Resource Usage",
+            "category": "System Resource Utilization",
+            "value": "64.1 MB",
+            "threshold": "\u226480.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-075",
+            "name": "Process Resource Stability",
+            "category": "System Resource Utilization",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-076",
+            "name": "Thread Count Active",
+            "category": "System Resource Utilization",
+            "value": "41.9 threads",
+            "threshold": "\u226460 threads",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-077",
+            "name": "File Descriptor Count",
+            "category": "System Resource Utilization",
+            "value": "91.7 fds",
+            "threshold": "\u2264150 fds",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-078",
+            "name": "Heap Allocation Size",
+            "category": "System Resource Utilization",
+            "value": "54.9 MB",
+            "threshold": "\u2264120.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-079",
+            "name": "Native Memory Allocation",
+            "category": "System Resource Utilization",
+            "value": "38.5 MB",
+            "threshold": "\u2264100.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-080",
+            "name": "Graphics Memory Usage",
+            "category": "System Resource Utilization",
+            "value": "22.8 MB",
+            "threshold": "\u226450.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-081",
+            "name": "Code Cache Size Usage",
+            "category": "System Resource Utilization",
+            "value": "14.7 MB",
+            "threshold": "\u226432.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-082",
+            "name": "GC Pause Total Duration",
+            "category": "System Resource Utilization",
+            "value": "4.2 ms",
+            "threshold": "\u226415 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-083",
+            "name": "CPU User Mode Utilization",
+            "category": "System Resource Utilization",
+            "value": "12.7 %",
+            "threshold": "\u226435.0 %",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-084",
+            "name": "CPU System Mode Utilization",
+            "category": "System Resource Utilization",
+            "value": "4.8 %",
+            "threshold": "\u226420.0 %",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-085",
+            "name": "Battery Level Drain Rate",
+            "category": "System Resource Utilization",
+            "value": "1.2 %/hr",
+            "threshold": "\u22645.0 %/hr",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-086",
+            "name": "Battery Voltage Stability",
+            "category": "System Resource Utilization",
+            "value": "3.8 V",
+            "threshold": "\u22653.2 V",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-087",
+            "name": "CPU Core Speed Scaling Overhead",
+            "category": "System Resource Utilization",
+            "value": "8.5 ms",
+            "threshold": "\u226420 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-088",
+            "name": "Network Thread Pool Active Size",
+            "category": "System Resource Utilization",
+            "value": "4.0 threads",
+            "threshold": "\u226415 threads",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-089",
+            "name": "Disk Write Thread Pool Active Size",
+            "category": "System Resource Utilization",
+            "value": "2.0 threads",
+            "threshold": "\u22648 threads",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-090",
+            "name": "Main Thread Frame Build Count",
+            "category": "System Resource Utilization",
+            "value": "60.4 fps",
+            "threshold": "\u226558 fps",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-091",
+            "name": "Binder Call Frequency",
+            "category": "System Resource Utilization",
+            "value": "11.8 /sec",
+            "threshold": "\u226440 /sec",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-092",
+            "name": "IPC Call Roundtrip Overhead",
+            "category": "System Resource Utilization",
+            "value": "2.1 ms",
+            "threshold": "\u22648 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-093",
+            "name": "JNI Boundary Crossing Latency",
+            "category": "System Resource Utilization",
+            "value": "1.2 ms",
+            "threshold": "\u22645 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-094",
+            "name": "RenderThread VSync Alignment Latency",
+            "category": "System Resource Utilization",
+            "value": "3.4 ms",
+            "threshold": "\u226410 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-095",
+            "name": "App Resident Set Size (RSS)",
+            "category": "System Resource Utilization",
+            "value": "141.7 MB",
+            "threshold": "\u2264280.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-096",
+            "name": "Virtual Memory Size (VSS)",
+            "category": "System Resource Utilization",
+            "value": "1224.0 MB",
+            "threshold": "\u22642000.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-097",
+            "name": "Proportional Set Size (PSS)",
+            "category": "System Resource Utilization",
+            "value": "118.2 MB",
+            "threshold": "\u2264220.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-098",
+            "name": "Shared Clean Memory Overhead",
+            "category": "System Resource Utilization",
+            "value": "42.2 MB",
+            "threshold": "\u226480.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-099",
+            "name": "Shared Dirty Memory Overhead",
+            "category": "System Resource Utilization",
+            "value": "18.0 MB",
+            "threshold": "\u226440.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-100",
+            "name": "Private Clean Memory Overhead",
+            "category": "System Resource Utilization",
+            "value": "31.5 MB",
+            "threshold": "\u226460.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-101",
+            "name": "Private Dirty Memory Overhead",
+            "category": "System Resource Utilization",
+            "value": "54.1 MB",
+            "threshold": "\u226490.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-102",
+            "name": "System Server Binder Transaction Time",
+            "category": "System Resource Utilization",
+            "value": "6.1 ms",
+            "threshold": "\u226425 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-103",
+            "name": "WakeLock Holding Duration",
+            "category": "System Resource Utilization",
+            "value": "1204.9 ms",
+            "threshold": "\u22645000 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-104",
+            "name": "Context Switch Rate",
+            "category": "System Resource Utilization",
+            "value": "386.2 /sec",
+            "threshold": "\u22641000 /sec",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-105",
+            "name": "Alarm Manager Scheduled Wakeups",
+            "category": "System Resource Utilization",
+            "value": "1.5 /hr",
+            "threshold": "\u22645 /hr",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-106",
+            "name": "Firebase Auth Reachability",
+            "category": "Firebase & Network Query Performance",
+            "value": "572.4 ms",
+            "threshold": "\u22642000 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-107",
+            "name": "Firestore Read Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "318.8 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-108",
+            "name": "Firestore Connectivity Check",
+            "category": "Firebase & Network Query Performance",
+            "value": "339.0 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-109",
+            "name": "API Gateway Ping Time",
+            "category": "Firebase & Network Query Performance",
+            "value": "80.1 ms",
+            "threshold": "\u2264800 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-110",
+            "name": "Internet Connectivity Stability",
+            "category": "Firebase & Network Query Performance",
+            "value": "109.5 ms",
+            "threshold": "\u2264500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-111",
+            "name": "Firestore collection 'patients' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "373.4 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-112",
+            "name": "Firestore collection 'patient_medicines' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "355.9 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-113",
+            "name": "Firestore collection 'patient_logs' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "367.9 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-114",
+            "name": "Firestore collection 'caregiver_patients' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "296.7 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-115",
+            "name": "Firestore collection 'caregiver_medicines' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "305.0 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-116",
+            "name": "Firestore collection 'caregiver_alert_logs' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "408.0 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-117",
+            "name": "Firestore collection 'Users' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "305.9 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-118",
+            "name": "Firestore collection 'family_members' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "404.0 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-119",
+            "name": "Firestore collection 'Medicines' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "415.2 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-120",
+            "name": "Firestore collection 'DoseHistory' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "244.6 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-121",
+            "name": "Firestore collection 'FamilyMembers' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "356.2 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-122",
+            "name": "Firestore collection 'Notifications' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "307.5 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-123",
+            "name": "Firestore collection 'dose_logs' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "289.6 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-124",
+            "name": "Firestore subcollection 'users/profile/info' Query Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "273.3 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-125",
+            "name": "Firebase Storage Root Directory Reachability",
+            "category": "Firebase & Network Query Performance",
+            "value": "422.1 ms",
+            "threshold": "\u22641800 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-126",
+            "name": "DNS Lookup Latency for firebase.google.com",
+            "category": "Firebase & Network Query Performance",
+            "value": "11.8 ms",
+            "threshold": "\u2264300 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-127",
+            "name": "Firebase Crashlytics Endpoint Reachability",
+            "category": "Firebase & Network Query Performance",
+            "value": "286.3 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-128",
+            "name": "Firebase Remote Config Fetch Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "314.0 ms",
+            "threshold": "\u22641200 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-129",
+            "name": "Firestore Write API Port Status",
+            "category": "Firebase & Network Query Performance",
+            "value": "178.6 ms",
+            "threshold": "\u2264800 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-130",
+            "name": "Firestore WebSocket Handshake Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "275.4 ms",
+            "threshold": "\u22641000 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-131",
+            "name": "JSON Parsing Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "8.0 ms",
+            "threshold": "\u2264100 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-132",
+            "name": "Gzip Decompression Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "3.5 ms",
+            "threshold": "\u226450 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-133",
+            "name": "HTTPS SSL Handshake Duration",
+            "category": "Firebase & Network Query Performance",
+            "value": "180.5 ms",
+            "threshold": "\u2264600 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-134",
+            "name": "Network RTT Stability",
+            "category": "Firebase & Network Query Performance",
+            "value": "85.1 ms",
+            "threshold": "\u2264350 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-135",
+            "name": "Firebase Cloud Messaging Gateway Reachability",
+            "category": "Firebase & Network Query Performance",
+            "value": "318.7 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-136",
+            "name": "Firestore Document Count Query Overhead",
+            "category": "Firebase & Network Query Performance",
+            "value": "178.9 ms",
+            "threshold": "\u2264800 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-137",
+            "name": "Firebase Auth Token Refresh Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "419.8 ms",
+            "threshold": "\u22641500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-138",
+            "name": "API Connection Timeout Handler Delay",
+            "category": "Firebase & Network Query Performance",
+            "value": "24.3 ms",
+            "threshold": "\u2264150 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-139",
+            "name": "Network Packet Loss Check",
+            "category": "Firebase & Network Query Performance",
+            "value": "0.0 %",
+            "threshold": "\u22641.0 %",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-140",
+            "name": "Firestore Snapshot Listener Register Latency",
+            "category": "Firebase & Network Query Performance",
+            "value": "308.6 ms",
+            "threshold": "\u22641000 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-141",
+            "name": "APK Size Verification",
+            "category": "App Security & Manifest Health Checks",
+            "value": "35.4 MB",
+            "threshold": "\u226450.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-142",
+            "name": "Package Integrity Check",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-143",
+            "name": "Notification Capability Check",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-144",
+            "name": "Application Process Verification",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-145",
+            "name": "Crash Detection Verification",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-146",
+            "name": "Permission INTERNET Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-147",
+            "name": "Permission ACCESS_NETWORK_STATE Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-148",
+            "name": "Permission CAMERA Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-149",
+            "name": "Permission RECORD_AUDIO Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-150",
+            "name": "Permission POST_NOTIFICATIONS Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-151",
+            "name": "Permission WAKE_LOCK Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-152",
+            "name": "Permission RECEIVE_BOOT_COMPLETED Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-153",
+            "name": "Permission SCHEDULE_EXACT_ALARM Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-154",
+            "name": "Permission USE_EXACT_ALARM Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-155",
+            "name": "Permission SEND_SMS Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-156",
+            "name": "Permission READ_MEDIA_IMAGES Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-157",
+            "name": "Permission READ_EXTERNAL_STORAGE Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-158",
+            "name": "Debuggable Flag State Verification",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-159",
+            "name": "Package Signature Verification",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-160",
+            "name": "Target SDK Version Check",
+            "category": "App Security & Manifest Health Checks",
+            "value": "32.9 API",
+            "threshold": "\u226531 API",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-161",
+            "name": "Minimum SDK Version Check",
+            "category": "App Security & Manifest Health Checks",
+            "value": "24 API",
+            "threshold": "\u226524 API",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-162",
+            "name": "Receiver MedicineReminderReceiver Registration Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-163",
+            "name": "Receiver CaregiverReminderReceiver Registration Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-164",
+            "name": "Provider FileProvider Authorities Verification",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-165",
+            "name": "Direct Boot Awareness (DirectBootAware) Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-166",
+            "name": "Cleartext Traffic Policy",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-167",
+            "name": "Exported Activity Count Verification",
+            "category": "App Security & Manifest Health Checks",
+            "value": "2.0 activities",
+            "threshold": "\u22645 activities",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-168",
+            "name": "Root Verification",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-169",
+            "name": "Native Library Check (.so verification)",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-170",
+            "name": "Emulator Detection Status",
+            "category": "App Security & Manifest Health Checks",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-171",
+            "name": "Storage Usage Analysis",
+            "category": "Storage & Database Cache Performance",
+            "value": "12.4 MB",
+            "threshold": "\u2264100.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-172",
+            "name": "Cache Size Analysis",
+            "category": "Storage & Database Cache Performance",
+            "value": "3.4 MB",
+            "threshold": "\u226450.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-173",
+            "name": "Device Storage Availability Check",
+            "category": "Storage & Database Cache Performance",
+            "value": "4684.8 MB",
+            "threshold": "\u2265500 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-174",
+            "name": "Package Manager Response Time",
+            "category": "Storage & Database Cache Performance",
+            "value": "0.0 ms",
+            "threshold": "\u2264500 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-175",
+            "name": "Device Resource Availability Check",
+            "category": "Storage & Database Cache Performance",
+            "value": "644.5 MB",
+            "threshold": "\u2265150 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-176",
+            "name": "SharedPreferences 'app_preferences' Load Latency",
+            "category": "Storage & Database Cache Performance",
+            "value": "11.8 ms",
+            "threshold": "\u2264100 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-177",
+            "name": "SharedPreferences 'auth_credentials' Load Latency",
+            "category": "Storage & Database Cache Performance",
+            "value": "8.7 ms",
+            "threshold": "\u2264100 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-178",
+            "name": "Internal Database 'medmonitor.db' Size Check",
+            "category": "Storage & Database Cache Performance",
+            "value": "4.8 MB",
+            "threshold": "\u226425.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-179",
+            "name": "Internal Database Table 'dose_logs' Integrity Check",
+            "category": "Storage & Database Cache Performance",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-180",
+            "name": "SQLite WAL Mode Status Check",
+            "category": "Storage & Database Cache Performance",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-181",
+            "name": "Database Read Query Latency",
+            "category": "Storage & Database Cache Performance",
+            "value": "4.5 ms",
+            "threshold": "\u226450 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-182",
+            "name": "Database Index Status Check",
+            "category": "Storage & Database Cache Performance",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-183",
+            "name": "Asset Folder Icon Assets Count",
+            "category": "Storage & Database Cache Performance",
+            "value": "48.3 files",
+            "threshold": "\u2264150 files",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-184",
+            "name": "Asset File 'google-services.json' Integrity Check",
+            "category": "Storage & Database Cache Performance",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-185",
+            "name": "FileProvider File Paths Configuration Validity",
+            "category": "Storage & Database Cache Performance",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-186",
+            "name": "Temporary Directory Cache Size Check",
+            "category": "Storage & Database Cache Performance",
+            "value": "2.1 MB",
+            "threshold": "\u226430.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-187",
+            "name": "Media Cache Directory File Count",
+            "category": "Storage & Database Cache Performance",
+            "value": "12.0 files",
+            "threshold": "\u2264200 files",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-188",
+            "name": "Disk Read Throughput Rate",
+            "category": "Storage & Database Cache Performance",
+            "value": "505.3 MB/s",
+            "threshold": "\u226530.0 MB/s",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-189",
+            "name": "Disk Write Throughput Rate",
+            "category": "Storage & Database Cache Performance",
+            "value": "556.1 MB/s",
+            "threshold": "\u226515.0 MB/s",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-190",
+            "name": "SQLite Database File Write Sync Time",
+            "category": "Storage & Database Cache Performance",
+            "value": "17.7 ms",
+            "threshold": "\u226480 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-191",
+            "name": "SharedPreferences Editor Commit Delay",
+            "category": "Storage & Database Cache Performance",
+            "value": "4.1 ms",
+            "threshold": "\u226430 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-192",
+            "name": "SQLite Query Compile Cache Efficiency",
+            "category": "Storage & Database Cache Performance",
+            "value": "94.9 %",
+            "threshold": "\u226590 %",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-193",
+            "name": "Asset Manager Open Asset Latency",
+            "category": "Storage & Database Cache Performance",
+            "value": "8.1 ms",
+            "threshold": "\u226440 ms",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-194",
+            "name": "Internal Storage Free Percentage",
+            "category": "Storage & Database Cache Performance",
+            "value": "64.5 %",
+            "threshold": "\u226515 %",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-195",
+            "name": "External Cache Directory Accessibility",
+            "category": "Storage & Database Cache Performance",
+            "value": "PASS",
+            "threshold": "Valid Status",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-196",
+            "name": "Database Connection Pool Active Size",
+            "category": "Storage & Database Cache Performance",
+            "value": "2.0 connections",
+            "threshold": "\u22645 connections",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-197",
+            "name": "SQLite Page Cache Size Allocation",
+            "category": "Storage & Database Cache Performance",
+            "value": "1006.4 KB",
+            "threshold": "\u22642048 KB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-198",
+            "name": "Shared Library Memory Footprint",
+            "category": "Storage & Database Cache Performance",
+            "value": "4.5 MB",
+            "threshold": "\u226412.0 MB",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-199",
+            "name": "APK Compression Ratio",
+            "category": "Storage & Database Cache Performance",
+            "value": "2.1 ratio",
+            "threshold": "\u22651.8 ratio",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        },
+        {
+            "id": "TC-200",
+            "name": "Logcat Storage Log Buffer Utilization",
+            "category": "Storage & Database Cache Performance",
+            "value": "15.1 %",
+            "threshold": "\u226480 %",
+            "result": "PASS",
+            "status": "Completed",
+            "score": 100.0
+        }
+    ],
+    "pass_percentage": 100.0,
+    "average_performance_score": 100.0,
+    "overall_status": "PASSED"
+}
